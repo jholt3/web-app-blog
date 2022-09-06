@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const User = require('../models/user')
-const Instrument = require('../models/instruments')
+const Instrument = require('../models/main')
 
 router.get('/', async (req, res) => {
     try {
