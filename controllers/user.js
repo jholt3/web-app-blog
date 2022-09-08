@@ -1,10 +1,10 @@
 const router = require('express').Router()
 const User = require('../models/user')
-const Instrument = require('../models/main')
+const Comment = require('../models/comment')
 
 router.get('/', async (req, res) => {
     try {
-        const users = await User.find().populate('instruments')
+        const users = await User.find().populate('comments')
 
         res.json(users)
     } catch (error) {
@@ -62,18 +62,18 @@ router.post('/create', async (req, res) => {
     }
 })
 
-router.put('/add/instrument/:id', async(req, res) => {
+router.put('/add/comment/:id', async(req, res) => {
     try {
-        const { instrumentId } = req.body
+        const { commentId } = req.body
         const { id } = req.params 
 
         const user = await User.findById(id)
-        user.instruments.push(instrumentId)
+        user.comments.push(commentId)
         let updatedUser = await User.findByIdAndUpdate(id, user)
 
         res.send(updatedUser)
     } catch (error) {
-        res.status(500).json({ 'message': 'unable to add instrument' })
+        res.status(500).json({ 'message': 'unable to add comment' })
     }
 })
 

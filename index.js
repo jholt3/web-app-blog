@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const userRoutes = require('./controllers/user')
-const intrumentRoutes = require('./controllers/instrument')
+const commentRoutes = require('./controllers/comment')
 require('dotenv').config()
 
 const app = express()
@@ -11,7 +11,7 @@ app.use(express.json())
 
 // routes
 app.use('/user', userRoutes)
-app.use('/instrument', intrumentRoutes)
+app.use('/comment', commentRoutes)
 
 // db connection
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true})

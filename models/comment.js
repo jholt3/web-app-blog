@@ -1,20 +1,17 @@
 const mongoose = require('mongoose')
 
-const instrumentSchema = new mongoose.Schema({
-    type: {
+const commentSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true,
-        enum: ['guitar', 'mayonnaise', 'drums', 'bass', 'piano']
+        default: 'Anonymous'
     },
-    brand: {
+    content: {
         type: String,
         required: true
     },
-    model: {
-        type: String
-    },
-    price: {
-        type: Number
+    pic: {
+        type: String, 
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -25,4 +22,4 @@ const instrumentSchema = new mongoose.Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model('Instrument', instrumentSchema)
+module.exports = mongoose.model('Comment', commentSchema)
