@@ -2,29 +2,23 @@
 
 This is the server directory for a blog web application named "Post-it"
 
-## Posts Routes
-| Method | Path  | Purpose |
-| :---:  | :---: |  :---  |
-| GET | /api/get/allposts  | Retrieve all posts |
-| POST | /api/post/newpost  | Add a new post |
-| PUT | /api/put/post | Edit an existing post|
-| DELETE | /api/delete/post  | Delete a post |
-
-## User Routes
+## Routes
 
 | Method | Path  | Purpose |
 | :---:  | :---: |  :---  |
-| POST | /api/posts/newuserprofile  | Create a new user profile |
-| GET | /api/get/euserprofile  | Retrieve an existing user profile |
-| GET | /api/get/userposts  | Retrieve all posts by a specific user |
-| GET | /api/get/ouserprofile  | Retrieve proflie date from another user |
-| GET | /api/get/ouserposts  | Retrieve posts from another user |
+| GET | /  | About Page |
+| GET | /posts | Home page that displays all posts |
+| GET | /posts/new | Forms page to create a new post |
+| POST | /posts  | Create a new post |
+| GET | /posts/:id/edit  | Edit form for a post |
+| PUT | /posts/:id  | Make changes to an existing post |
+| DELETE | /posts/:id  | Delete a post |
+
 
 ## Technologies
 
-Express
-PostgreSQL
+MongoDB, Express, NodeJS
 
 ## References
 
-For initial setup of Express Server and PSQL database: https://www.freecodecamp.org/news/fullstack-react-blog-app-with-express-and-psql/
+Referenced code for the REST-Rant activity
