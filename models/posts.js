@@ -1,7 +1,7 @@
 // GET /places
 const mongoose = require('mongoose')
 
-const placeSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
     post: {type: String, required: true},
     pic: {type: String, default: 'http://placekitten.com/350/350'},
     name: {type: String, required: true},
@@ -9,7 +9,7 @@ const placeSchema = new mongoose.Schema({
 }
 })
 
-placeSchema.methods.showEstablished = function() {
+postSchema.methods.showEstablished = function() {
     return `${this.name} made this post on ${this.date}.`
 }
 
