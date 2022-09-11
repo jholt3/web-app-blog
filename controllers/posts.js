@@ -2,7 +2,7 @@ const router = require('express').Router()
 const db = require('../models')
 
 router.get('/', (req, res) => {
-  db.Place.find()
+  db.Post.find()
     .then((posts => {
         res.render('posts/index', {posts})
     }))
@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    db.Place.create(req.body)
+    db.Post.create(req.body)
         .then(() => {
             res.redirect('/posts')
         })
@@ -38,7 +38,7 @@ router.get('/new', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  db.Place.findById(req.params.id)
+  db.Post.findById(req.params.id)
   .populate('posts')
   .then(post => {
     console.log(post.comments)
@@ -51,7 +51,7 @@ router.get('/:id', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  db.Place.findByIdAndUpdate(req.params.id, req.body)
+  db.Post.findByIdAndUpdate(req.params.id, req.body)
   .then(() => {
     res.redirect(`/posts/${req.params.id}`)
   })
@@ -62,7 +62,7 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
- db.Place.findByIdAndDelete(req.params.id)
+ db.Post.findByIdAndDelete(req.params.id)
  .then(place => {
   res.redirect('/posts')
  })
@@ -73,7 +73,7 @@ router.delete('/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  db.Place.findById(req.params.id)
+  db.Post.findById(req.params.id)
   .then(post => {
     res.render('posts/edit', {post})
   })
