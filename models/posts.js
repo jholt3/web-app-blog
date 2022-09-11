@@ -13,4 +13,4 @@ postSchema.methods.showEstablished = function() {
     return `${this.name} made this post on ${this.date}.`
 }
 
-module.exports = mongoose.model('Post', placeSchema)
+module.exports = mongoose.model('Post', postSchema)
