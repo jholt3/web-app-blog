@@ -15,7 +15,7 @@
     "react": "^16.14.0"
   },
   "description": "This is the server directory for a blog web application named \"Post-it\"",
-  "main": "app.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jholt3/web-app-express-blog.git"
