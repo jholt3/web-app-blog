@@ -37,11 +37,11 @@ router.get('/new', (req, res) => {
   res.render('posts/new')
 })
 
+
 router.get('/:id', (req, res) => {
   db.Post.findById(req.params.id)
   .populate('posts')
   .then(post => {
-    console.log(post.comments)
     res.render('posts/show', {post})
   })
   .catch(err => {
@@ -62,25 +62,15 @@ router.put('/:id', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
- db.Post.findByIdAndDelete(req.params.id)
- .then(place => {
-  res.redirect('/posts')
- })
- .catch(err => {
-  console.log('err', err)
-  res.render('error404')
- })
-})
-
-router.get('/:id/edit', (req, res) => {
-  db.Post.findById(req.params.id)
-  .then(post => {
-    res.render('posts/edit', {post})
+  db.Post.findByIdAndDelete(req.params.id)
+  .then(place => {
+   res.redirect('/posts')
   })
   .catch(err => {
-    res.render('error404')
+   console.log('err', err)
+   res.render('error404')
   })
-})
+ })
 
 module.exports = router
 

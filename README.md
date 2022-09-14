@@ -6,7 +6,7 @@ This is the server directory for a blog web application named "Post-it"
 
 | Method | Path  | Purpose |
 | :---:  | :---: |  :---  |
-| GET | /  | About Page |
+| GET | /  | Home Page |
 | GET | /posts | Home page that displays all posts |
 | GET | /posts/new | Forms page to create a new post |
 | POST | /posts  | Create a new post |

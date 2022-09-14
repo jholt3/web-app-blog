@@ -2,6 +2,8 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const cors = require('cors')
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
 const app = express()
 
 // Express Settings
@@ -18,7 +20,7 @@ app.use(cors())
 app.use('/posts', require('./controllers/posts'))
 
 app.get ('/', (req, res) => {
-    res.render('About')
+    res.render('Home')
 })
 
 app.get ('*', (req, res) => {
@@ -26,5 +28,7 @@ app.get ('*', (req, res) => {
 })
 
 // Listen for Connections
-app.listen(process.env.PORT)
+app.listen(process.env.PORT, () => {
+    console.log('Backend is running on port 5400')
+})
 
