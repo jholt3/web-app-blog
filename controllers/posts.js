@@ -37,10 +37,8 @@ router.get('/new', (req, res) => {
   res.render('posts/new')
 })
 
-
 router.get('/:id', (req, res) => {
   db.Post.findById(req.params.id)
-  .populate('posts')
   .then(post => {
     res.render('posts/show', {post})
   })
@@ -63,7 +61,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   db.Post.findByIdAndDelete(req.params.id)
-  .then(place => {
+  .then(post => {
    res.redirect('/posts')
   })
   .catch(err => {
@@ -71,6 +69,18 @@ router.delete('/:id', (req, res) => {
    res.render('error404')
   })
  })
+
+router.get('/:id/edit', (req, res) => {
+  db.Post.findById(req.params.id)
+  .then(post => {
+    res.render('posts/edit', {post})
+  })
+  .catch(err => {
+    res.render('error404')
+  })
+})
+
+
 
 module.exports = router
 

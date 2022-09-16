@@ -1,6 +1,6 @@
-# Project Post-it Backend 
+# Project Post-it 
 
-This is the server directory for a blog web application named "Post-it"
+This is the directory for a blog web application named "Post-it". The user can add a post by going to the "Add Post" page and entering information into the forms. Once the post is created, it will appear on the "Posts" page, which includes all of the posts. In order to edit or delete a post, click on the title of the post and click on the "edit" or "delete" button on that specific post's show page. 
 
 ## Routes
 
@@ -17,8 +17,4 @@ This is the server directory for a blog web application named "Post-it"
 
 ## Technologies
 
-MongoDB, Express, NodeJS
-
-## References
-
-Referenced code for the REST-Rant activity
+MongoDB, Express, React, NodeJS
