@@ -18,3 +18,11 @@ This is the directory for a blog web application named "Post-it". The user can a
 ## Technologies
 
 MongoDB, Express, React, NodeJS
+
+## Project Team
+
+### Frontend
+Brapagon Voyles, Magdy Gamel
+
+### Backend
+Aaron Boone, Jay Holt
