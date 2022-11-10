@@ -1,20 +1,11 @@
-const React = require('react')
+import React from 'react'
 const Def = require('../default')
 
-function new_form (data) {
-    let message = ''
-    if (data.message) {
-        message = (
-            <h4 className='alert-danger'>
-                {data.message}
-            </h4>
-        )
-    }
+function new_form () {
     return (
         <Def>
             <main>
                 <h1>Add a New Post</h1>
-                {message}
                 <form method='POST' action='/posts'>
                     <div className='form-group'>
                         <label htmlFor='title'>Title</label>

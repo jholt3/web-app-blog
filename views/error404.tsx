@@ -1,4 +1,4 @@
-const React = require('react')
+import React from 'react'
 const Def = require('./default')
 
 function error404 () {
@@ -8,7 +8,7 @@ function error404 () {
                 <h1>404: PAGE NOT FOUND</h1>
                 <p>Oops, sorry, we can't find this page!</p>
                 <div>
-                <img src="/images/pexels-ann-h-1888015.jpg" class="img-fluid" alt="image with tiles that spell error" />
+                <img src="/images/pexels-ann-h-1888015.jpg" className="img-fluid" alt="image with tiles that spell error" />
                 </div>
             </main>
         </Def>

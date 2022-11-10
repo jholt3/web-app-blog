@@ -1,4 +1,4 @@
-const React = require('react')
+import React from 'react'
 const Def = require('../default')
 
 function index (data) {
@@ -13,7 +13,7 @@ function index (data) {
             <p className='text-center'>
                 {post.post}
             </p>
-            <img src={post.pic} class="mx-auto d-block" alt={post.name} />
+            <img src={post.pic} className="mx-auto d-block" alt={post.name} />
 
             <h4>{post.user}</h4>
 

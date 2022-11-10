@@ -1,4 +1,4 @@
-const React = require('react')
+import React from 'react'
 const Def = require('./default')
 
 function about () {
@@ -7,7 +7,7 @@ function about () {
             <main>
                 <h1>Who We Are</h1>
                 <div>
-                    <img src="/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg" class="img-fluid" alt="Responsive Image" /> 
+                    <img src="/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg" className="img-fluid" alt="Responsive Image" /> 
                <h2>Frontend Developers</h2>
                 <ul>
                     <li> Brapagon Voyles </li>
